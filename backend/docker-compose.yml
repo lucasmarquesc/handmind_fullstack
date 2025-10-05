@@ -1,0 +1,16 @@
+# backend/docker-compose.yml
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: handmind_db_container
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: senha123
+      POSTGRES_DB: handmind_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
