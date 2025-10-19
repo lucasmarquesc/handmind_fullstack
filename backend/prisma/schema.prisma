@@ -20,3 +20,13 @@ model Module {
 
   @@map("modules")
 }
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique // Email único para login
+  password  String   // Senha com hash
+  name      String?  // Nome opcional
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("users")
+}
